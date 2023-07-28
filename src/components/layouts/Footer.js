@@ -1,6 +1,7 @@
 import React from "react";
 import payment from "../../assets/images/payment.png";
 import Flogo from "../../assets/images/footer-logo.png";
+import { Link } from "react-router-dom/dist";
 // footer-logo
 const Footer = () => {
   return (
@@ -12,17 +13,17 @@ const Footer = () => {
               <div className="col-lg-3 col-md-6 col-sm-6">
                 <div className="footer__about">
                   <div className="footer__logo">
-                    <a href="/Home">
+                    <Link to="/Home">
                       <img src={Flogo} alt="" />
-                    </a>
+                    </Link>
                   </div>
                   <p>
                     The customer is at the heart of our unique business model,
                     which includes design.
                   </p>
-                  <a href="#">
+                  <Link to="#">
                     <img src={payment} alt="" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
@@ -30,16 +31,16 @@ const Footer = () => {
                   <h6>Shopping</h6>
                   <ul>
                     <li>
-                      <a href="#">Clothing Store</a>
+                      <Link to="#">Clothing Store</Link>
                     </li>
                     <li>
-                      <a href="#">Trending Shoes</a>
+                      <Link to="#">Trending Shoes</Link>
                     </li>
                     <li>
-                      <a href="#">Accessories</a>
+                      <Link to="#">Accessories</Link>
                     </li>
                     <li>
-                      <a href="#">Sale</a>
+                      <Link to="#">Sale</Link>
                     </li>
                   </ul>
                 </div>
@@ -49,16 +50,16 @@ const Footer = () => {
                   <h6>Shopping</h6>
                   <ul>
                     <li>
-                      <a href="#">Contact Us</a>
+                      <Link to="#">Contact Us</Link>
                     </li>
                     <li>
-                      <a href="#">Payment Methods</a>
+                      <Link to="#">Payment Methods</Link>
                     </li>
                     <li>
-                      <a href="#">Delivary</a>
+                      <Link to="#">Delivary</Link>
                     </li>
                     <li>
-                      <a href="#">Return &amp; Exchanges</a>
+                      <Link to="#">Return &amp; Exchanges</Link>
                     </li>
                   </ul>
                 </div>
@@ -88,9 +89,9 @@ const Footer = () => {
                   <p>
                     Copyright © 2020 All rights reserved |{" "}
                     <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}
-                    <a href="https://colorlib.com" target="_blank">
+                    <Link to="https://colorlib.com" target="_blank">
                       ShoppingAdda
-                    </a>
+                    </Link>
                   </p>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                 </div>

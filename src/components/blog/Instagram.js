@@ -18,37 +18,37 @@ const Instagram = () => {
                   className="instagram__pic__item set-bg"
                   data-setbg="img/instagram/instagram-1.jpg"
                 >
-                  <img src={Insta_1} />
+                  <img src={Insta_1} alt=""/>
                 </div>
                 <div
                   className="instagram__pic__item set-bg"
                   data-setbg="img/instagram/instagram-2.jpg"
                 >
-                  <img src={Insta_2} />
+                  <img src={Insta_2} alt=""/>
                 </div>
                 <div
                   className="instagram__pic__item set-bg"
                   data-setbg="img/instagram/instagram-3.jpg"
                 >
-                  <img src={Insta_3} />
+                  <img src={Insta_3} alt="" />
                 </div>
                 <div
                   className="instagram__pic__item set-bg"
                   data-setbg="img/instagram/instagram-4.jpg"
                 >
-                  <img src={Insta_4} />
+                  <img src={Insta_4} alt=""/>
                 </div>
                 <div
                   className="instagram__pic__item set-bg"
                   data-setbg="img/instagram/instagram-5.jpg"
                 >
-                  <img src={Insta_5} />
+                  <img src={Insta_5} alt=""/>
                 </div>
                 <div
                   className="instagram__pic__item set-bg"
                   data-setbg="img/instagram/instagram-6.jpg"
                 >
-                  <img src={Insta_6} />
+                  <img src={Insta_6} alt=""/>
                 </div>
               </div>
             </div>

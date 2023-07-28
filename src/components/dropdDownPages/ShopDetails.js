@@ -1,18 +1,15 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import ShoppingDetailRelated from "../../pages/ShopDetailRelated";
-import thumb_1 from "../../assets/images/shop-details/thumb-1.png";
-import thumb_2 from "../../assets/images/shop-details/thumb-1.png";
-import thumb_3 from "../../assets/images/shop-details/thumb-1.png";
-import thumb_4 from "../../assets/images/shop-details/thumb-1.png";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { addToCart } from "../../redux/slice/CartSlice";
 import { addToWishList } from "../../redux/slice/WishListSlice";
 const ShopDetails = () => {
   let location = useLocation();
   const detail = location.state.data;
+  const productDetail=useSelector((state)=>state?.productDetail?.productDetail)
+  console.log('productDetail', productDetail)
   const [img, setImg] = React.useState(detail.thumbnail);
-  const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
   return (
@@ -49,7 +46,7 @@ const ShopDetails = () => {
                               data-setbg="img/shop-details/thumb-1.png"
                               key={index}
                             >
-                              <img src={item} />
+                              <img src={item} alt=""/>
                             </div>
                           </span>
                         </li>
@@ -62,7 +59,7 @@ const ShopDetails = () => {
                 <div className="tab-content">
                   <div className="tab-pane active" id="tabs-1" role="tabpanel">
                     <div>
-                      <img src={img} />
+                      <img src={img} alt=""/>
                     </div>
                   </div>
                   <div className="tab-pane" id="tabs-2" role="tabpanel">
@@ -96,7 +93,7 @@ const ShopDetails = () => {
             <div className="row d-flex justify-content-center">
               <div className="col-lg-8">
                 <div className="product__details__text">
-                  <h4>{detail.title}</h4>
+                  <h4>{productDetail.title}</h4>
                   <div className="rating">
                     <i className="fa fa-star" />
                     <i className="fa fa-star" />
@@ -109,7 +106,7 @@ const ShopDetails = () => {
                     ${detail.price} <span>{detail.discountPercentage}%</span>
                   </h3>
                   <p className="description">{detail.description}</p>
-                  {detail.category == "Clothes" ? (
+                  {detail.category === "Clothes" ? (
                     <div className="product__details__option">
                       <div className="product__details__option__size">
                         <span>Size:</span>
@@ -176,14 +173,6 @@ const ShopDetails = () => {
                       add to cart
                     </button>
                   </div>
-                  {/* <div className="product__details__btns__option">
-                  <Link to="#">
-                      <i className="fa fa-heart" /> add to wishlist
-                      </Link>
-                    <Link to="#">
-                      <i className="fa fa-exchange" /> Add To Compare
-                    </Link>
-                  </div> */}
                   <div className="product__details__last__option">
                     <h5>
                       <span>Guaranteed Safe Checkout</span>

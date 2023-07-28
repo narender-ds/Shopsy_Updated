@@ -25,7 +25,7 @@ const LatestNews = () => {
                   data-setbg="img/blog/blog-1.jpg"
                 >
                   {" "}
-                  <img src={blog_1} />
+                  <img src={blog_1} alt=""/>
                 </div>
                 <div className="blog__item__text">
                   <span>
@@ -42,7 +42,7 @@ const LatestNews = () => {
                   className="blog__item__pic set-bg"
                   data-setbg="img/blog/blog-2.jpg"
                 >
-                  <img src={blog_2} />
+                  <img src={blog_2} alt=""/>
                 </div>
                 <div className="blog__item__text">
                   <span>
@@ -59,7 +59,7 @@ const LatestNews = () => {
                   className="blog__item__pic set-bg"
                   data-setbg="img/blog/blog-3.jpg"
                 >
-                  <img src={blog_3} />
+                  <img src={blog_3} alt=""/>
                 </div>
                 <div className="blog__item__text">
                   <span>

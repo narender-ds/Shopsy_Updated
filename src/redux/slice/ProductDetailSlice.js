@@ -1,40 +1,31 @@
-import { createSlice } from "@reduxjs/toolkit";
-// import _products from "../data/products";
-import productData from "../../constant/ProductData";
+import {createAsyncThunk,createSlice} from "@reduxjs/toolkit"
+import axios from "axios"
 
-const initialState = { loading: false, list: [] };
+const initialState={
+    productDetail:""
+}
 
-const productsSlice = createSlice({
-  name: "products",
-  initialState,
-  reducers: {
-    startFetch(state) {
-      state.loading = true;
-    },
-    save(state, action) {
-      const { payload } = action;
-      state.loading = false;
-      state.list = payload;
+export const fetchProductDetail=createAsyncThunk("detail",async(id)=>{
+    const response=await axios.get(`https://dummyjson.com/products/${id}`).then((res)=>res.data)
+    return response;
+})
+
+const ProductDetailSlice=createSlice({
+    name:"productDetail",
+    initialState,
+    extraReducers:(data)=>{
+        data
+        .addCase(fetchProductDetail.pending,(state,action)=>{
+            console.log('productDetailPending', state)
+        })
+        .addCase(fetchProductDetail.fulfilled,(state,action)=>{
+            state.productDetail=action.payload
+            console.log('state.productDetail', state.productDetail)
+        })
+        .addCase(fetchProductDetail.rejected,(state,action)=>{
+            console.log('productDetailRejected', state)
+        })
     }
-  }
-});
+})
 
-export const { startFetch, save } = productsSlice.actions;
-
-export const fetchProducts = () => async (dispatch) => {
-  dispatch(save([]));
-  dispatch(startFetch());
-
-  const products = await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(productData);
-    }, 800);
-  });
-
-  dispatch(save(products));
-
-};
-
-const productsReducer = productsSlice.reducer;
-
-export default productsReducer;
+export default ProductDetailSlice.reducer;

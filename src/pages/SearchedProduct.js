@@ -9,15 +9,12 @@ const SearchedProduct = () => {
   const SearchItem = useSelector(
     (state) => state?.searchProducts?.searchProducts
   );
-  const getCategoryItems = useSelector(
-    (state) => state?.getCategoryData?.getCategoryData
-  );
   return (
     <section className="product spad">
       <div className="container">
         <div className="card-body">
           <div className="row">
-            {SearchItem?.products?.map((item) => {
+            {SearchItem?.products?.length >0 ?SearchItem?.products?.map((item) => {
               return (
                 <>
                   <div className="col-md-3 mb-3" key={item.id}>
@@ -97,7 +94,9 @@ const SearchedProduct = () => {
                   </div>
                 </>
               );
-            })}
+            }):<div style={{marginLeft:"380px"}}>
+            <h1>No Results Found</h1>
+          </div> }
           </div>
         </div>
       </div>

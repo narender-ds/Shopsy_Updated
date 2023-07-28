@@ -1,20 +1,16 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { cartTotalPriceSelector } from "../../redux/Selectors";
-import { CartProductSubtotal, CartTotal } from "../Cart/CartFunctions";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Toster from "../../utils/toster";
 import CartSlider from "../Cart/CartSlider";
 import { useForm } from "react-hook-form";
+import { CartTotal } from "../Cart/CartFunctions";
 // import { clear } from "../../redux/slice/CartSlice";
 
 const CheckOut = () => {
   const [checked, setChecked] = useState(false);
   const product = useSelector((state) => state.cart);
-  const ui = useSelector((state) => state.ui);
-  const dispatch = useDispatch();
   const totalPrice = product.cart.reduce(
     (a, c) => a + c?.quantity * c?.price,
     0
@@ -23,15 +19,14 @@ const CheckOut = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty, isValid },
-    watch,
+    formState: { errors },
     reset,
   } = useForm();
 
   const submitForm = async (data) => {
     if (data) {
       // Toster.Showsuccess("Order Placed");
-      navigate("/payment")
+      navigate("/payment");
       // dispatch(clear());
       reset();
     }
@@ -269,6 +264,7 @@ const CheckOut = () => {
                             <img
                               style={{ width: "20%", height: "20%" }}
                               src={cartProducts.thumbnail}
+                              alt=""
                             />
                             <li>
                               01. {cartProducts.title}

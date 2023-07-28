@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom/dist';
 
 const Page404 = () => {
   return (
@@ -11,28 +12,28 @@ const Page404 = () => {
     {/* <div className="navbar-links">
       <ul>
         <li>
-          <a href="http://salehriaz.com/404Page/404.html" target="_blank">
+          <Link to="http://salehriaz.com/404Page/404.html" target="_blank">
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="http://salehriaz.com/404Page/404.html" target="_blank">
+          <Link to="http://salehriaz.com/404Page/404.html" target="_blank">
             About
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="http://salehriaz.com/404Page/404.html" target="_blank">
+          <Link to="http://salehriaz.com/404Page/404.html" target="_blank">
             Features
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="http://salehriaz.com/404Page/404.html"
+          <Link
+            to="http://salehriaz.com/404Page/404.html"
             className="btn-request"
             target="_blank"
           >
             Request A Demo
-          </a>
+          </Link>
         </li>
       </ul>
     </div> */}
@@ -42,31 +43,38 @@ const Page404 = () => {
       className="image-404"
       src="http://salehriaz.com/404Page/img/404.svg"
       width="300px"
+      alt=''
+
     />
-    <a
-      href="/HOME"
+    <Link
+      to="/HOME"
       className="btn-go-home"
       target="_blank"
     >
       GO BACK HOME
-    </a>
+    </Link>
   </div>
   <div className="objects">
     <img
       className="object_rocket"
       src="http://salehriaz.com/404Page/img/rocket.svg"
       width="40px"
+      alt=''
     />
     <div className="earth-moon">
       <img
         className="object_earth"
         src="http://salehriaz.com/404Page/img/earth.svg"
         width="100px"
+      alt=''
+
       />
       <img
         className="object_moon"
         src="http://salehriaz.com/404Page/img/moon.svg"
         width="80px"
+      alt=''
+
       />
     </div>
     <div className="box_astronaut">
@@ -74,6 +82,8 @@ const Page404 = () => {
         className="object_astronaut"
         src="http://salehriaz.com/404Page/img/astronaut.svg"
         width="140px"
+      alt=''
+
       />
     </div>
   </div>

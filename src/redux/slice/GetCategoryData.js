@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
+import { STATUS } from "../../context/Status";
 
 const initialState={
+  status: "",
     getCategoryData:[]
 }
 
@@ -16,6 +18,8 @@ const GetCategoryData=createSlice({
     extraReducers: (builder) => {
       builder
         .addCase(getCategoryData.pending, (state, action) => {
+        state.status = STATUS.LOADING;
+
         })
         .addCase(getCategoryData.fulfilled, (state, action) => {
           state.getCategoryData = action.payload;

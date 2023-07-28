@@ -6,12 +6,17 @@ import { productsFetch } from "../../redux/slice/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { STATUS } from "../../context/Status";
 import { addToWishList } from "../../redux/slice/WishListSlice";
+import { useNavigate } from "react-router-dom/dist";
+import { GlobalContext } from "../../context/GlobalContext";
+import { fetchProductDetail } from "../../redux/slice/ProductDetailSlice";
 
 const MainProducts = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { isLogin } = GlobalContext();
   useEffect(() => {
     dispatch(productsFetch());
-  }, []);
+  }, [dispatch]);
   const { products, status } = useSelector((state) => state.products);
   if (status === STATUS.LOADING) {
     return <Detail />;
@@ -24,12 +29,12 @@ const MainProducts = () => {
     <>
       <div className="card-body">
         <div className="row">
-          {products?.products?.map((item) => {
+          {products?.products?.map((item, index) => {
             return (
               <>
-                <div className="col-md-3 mb-3">
+                <div className="col-md-3 mb-3" key={item.id + index}>
                   <div className="card">
-                    <Link to="/shop-details" state={{ data: item }}>
+                    <Link to="/shop-details" state={{ data: item }} onClick={()=>dispatch(fetchProductDetail(item.id))} >
                       <img
                         className="card-img-top"
                         style={{ height: "160px", width: "" }}
@@ -73,7 +78,11 @@ const MainProducts = () => {
                         >
                           <span>Add Cart</span>
                         </button>
-                        <button type="button" className="btn btn-light">
+                        <button
+                          type="button"
+                          onClick={isLogin && navigate("/shopping-cart")}
+                          className="btn btn-light"
+                        >
                           <i
                             style={{ color: "#EC473F" }}
                             className="fa fa-shopping-cart"

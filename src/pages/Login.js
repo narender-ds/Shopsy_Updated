@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { GlobalContext } from "../context/GlobalContext";
 const Validations = Yup.object({
   email: Yup.string().email("Invalid Email").required("Email is Required"),
   password: Yup.string().min(8).max(20).required("Password is Required"),
@@ -15,6 +16,7 @@ const initialValues = {
   password: "",
 };
 const Login = () => {
+  const { setIsLogin} = GlobalContext();
   const navigate = useNavigate();
   const notify = () => toast.Showerror;
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
@@ -32,6 +34,7 @@ const Login = () => {
         const checkPassword = JSON.parse(passwordCheck);
 
         if (checkEmail === value.email && checkPassword === value.password) {
+          setIsLogin(true)
           navigate("/Home");
         } else {
           alert("You are not A Register Member");

@@ -84,9 +84,9 @@ const WishList = () => {
                                 </button>
                               </td>
                               <td width="10%" className="text-center">
-                                <a href="#" className="trash-icon">
+                                <Link className="trash-icon">
                                   <i className="far fa-trash-alt" />
-                                </a>
+                                </Link>
                               </td>
                             </tr>
                           </tbody>

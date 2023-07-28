@@ -7,6 +7,7 @@ import client5 from "../../assets/images/clients/client-5.png"
 import client6 from "../../assets/images/clients/client-6.png"
 import client7 from "../../assets/images/clients/client-7.png"
 import client8 from "../../assets/images/clients/client-8.png"
+import { Link } from 'react-router-dom/dist'
 const ClientSection=()=> {
   return (
     <>
@@ -22,44 +23,44 @@ const ClientSection=()=> {
     </div>
     <div className="row">
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-        <a href="#" className="client__item">
+        <Link to="#" className="client__item">
           <img src={client1} alt="" />
-        </a>
+        </Link>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-        <a href="#" className="client__item">
+        <Link to="#" className="client__item">
           <img src={client2} alt="" />
-        </a>
+        </Link>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-        <a href="#" className="client__item">
+        <Link to="#" className="client__item">
           <img src={client3} alt="" />
-        </a>
+        </Link>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-        <a href="#" className="client__item">
+        <Link to="#" className="client__item">
           <img src={client4} alt="" />
-        </a>
+        </Link>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-        <a href="#" className="client__item">
+        <Link to="#" className="client__item">
           <img src={client5} alt="" />
-        </a>
+        </Link>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-        <a href="#" className="client__item">
+        <Link to="#" className="client__item">
           <img src={client6} alt="" />
-        </a>
+        </Link>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-        <a href="#" className="client__item">
+        <Link to="#" className="client__item">
           <img src={client7} alt="" />
-        </a>
+        </Link>
       </div>
       <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-        <a href="#" className="client__item">
+        <Link to="#" className="client__item">
           <img src={client8} alt="" />
-        </a>
+        </Link>
       </div>
     </div>
   </div>

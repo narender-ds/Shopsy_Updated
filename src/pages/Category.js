@@ -9,7 +9,7 @@ const Category = () => {
   const categories = useSelector((state) => state.categories.categories);
   useEffect(() => {
     dispatch(category());
-  }, []);
+  });
   return (
     <>
       <section>

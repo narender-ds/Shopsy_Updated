@@ -6,15 +6,17 @@ import WishListSlice from "./slice/WishListSlice";
 import SearchProductSlice from "./slice/SearchProductSlice";
 import CategorySlice from "./slice/CategorySlice";
 import GetCategoryData from "./slice/GetCategoryData";
+import ProductDetailSlice from "./slice/ProductDetailSlice";
 
 export const store = configureStore({
   reducer: {
-    products: ProductReducer,
-    cart: CartReducer,
     ui:uiReducer,
+    cart: CartReducer,
     wishList:WishListSlice,
-    searchProducts:SearchProductSlice,
     categories:CategorySlice,
-    getCategoryData:GetCategoryData
+    products: ProductReducer,
+    getCategoryData:GetCategoryData,
+    productDetail:ProductDetailSlice,
+    searchProducts:SearchProductSlice,
   },
 });

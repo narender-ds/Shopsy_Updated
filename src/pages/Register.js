@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   FaTwitter,
   FaGoogle,
@@ -42,7 +42,7 @@ const Register = () => {
         localStorage.setItem("value.email", JSON.stringify(value.email))
         localStorage.setItem("value.password", JSON.stringify(value.password))
 
-        navigate("/login")
+        navigate("/")
        }
     },
   });
@@ -194,7 +194,7 @@ const Register = () => {
                         id="form2Example33"
                         defaultChecked=""
                       /> */}
-                    <Link to="/login">
+                    <Link to="/">
                       <label
                         style={{ marginBottom: "10px" }}
                         className="form-check-label"

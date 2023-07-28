@@ -1,6 +1,5 @@
 import React from "react";
 import Instagram from "../components/blog/Instagram";
-import Banner from "../components/layouts/Banner";
 import MainProducts from "../components/products/MainProducts";
 import DealOfferBanner from "../components/miscellaneous/DealOfferBanner";
 const DashBoard = () => {

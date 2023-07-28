@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import blogImg from "../../assets/images/blog/details/blog-author.jpg";
 import blogImg1 from "../../assets/images/blog/details/blog-details.jpg";
-import Instagram from "./Instagram";
 import LatestNews from "./LatestNews";
 const BlogDetals = () => {
   return (

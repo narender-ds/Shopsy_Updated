@@ -16,7 +16,7 @@ const Shop = () => {
   useEffect(() => {
     dispatch(productsFetch());
     dispatch(category());
-  }, []);
+  });
 
   return (
     <>
@@ -24,7 +24,7 @@ const Shop = () => {
         <div className="container">
           <div className="row">
             <div className="breadcrumb__links">
-              <a href="/Home">Home</a>
+              <Link to="/Home">Home</Link>
               <span>Shop</span>
             </div>
           </div>
@@ -46,13 +46,13 @@ const Shop = () => {
                       className="list-group list-group-flush"
                       key={categoryData.id}
                     >
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="list-group-item list-group-item-action"
                         onClick={() => dispatch(getCategoryData(categoryData))}
                       >
                         {categoryData}
-                      </a>
+                      </Link>
                     </div>
                   </>
                 );
@@ -612,34 +612,34 @@ const Shop = () => {
                   <div className="col-md-6">
                     <ul className="pagination m-0">
                       <li className="page-item disabled">
-                        <a
+                        <Link
                           className="page-link"
-                          href="#"
+                          to="#"
                           tabIndex={-1}
                           aria-disabled="true"
                         >
                           Previous
-                        </a>
+                        </Link>
                       </li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
+                        <Link className="page-link" to="#">
                           1
-                        </a>
+                        </Link>
                       </li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
+                        <Link className="page-link" to="#">
                           2
-                        </a>
+                        </Link>
                       </li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
+                        <Link className="page-link" to="#">
                           3
-                        </a>
+                        </Link>
                       </li>
                       <li className="page-item">
-                        <a className="page-link" href="#">
+                        <Link className="page-link" to="#">
                           Next
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>

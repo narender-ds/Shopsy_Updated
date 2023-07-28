@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Hlogo from "../../assets/images/logo.png";
 import SearchIcon from "../../assets/images/icon/search.png";
 import HeartIcon from "../../assets/images/icon/heart.png";
-import { cartTotalSelector } from "../../redux/Selectors";
 import { toggle } from "../../redux/slice/uiSlice";
 import { Bubble } from "../Cart/CartFunctions";
 import CartSlider from "../Cart/CartSlider";
@@ -52,7 +51,7 @@ const[searchInput,setSearchInput]=useState("")
                 <div className="col-lg-6 col-md-5">
                   <div className="header__top__right">
                     <div className="header__top__links">
-                      <Link to="/login">Sign in</Link>
+                      <Link to="/">Sign in</Link>
                       <Link to="#">FAQs</Link>
                     </div>
                     <div className="header__top__hover">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom/dist";
 
 const ShoppingDetailRelated = () => {
   return (
@@ -20,28 +21,28 @@ const ShoppingDetailRelated = () => {
                   <span className="label">New</span>
                   <ul className="product__hover">
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/heart.png" alt="" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/compare.png" alt="" />{" "}
                         <span>Compare</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/search.png" alt="" />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="product__item__text">
                   <h6>Piqué Biker Jacket</h6>
-                  <a href="#" className="add-cart">
+                  <Link to="#" className="add-cart">
                     + Add To Cart
-                  </a>
+                  </Link>
                   <div className="rating">
                     <i className="fa fa-star-o" />
                     <i className="fa fa-star-o" />
@@ -72,28 +73,28 @@ const ShoppingDetailRelated = () => {
                 >
                   <ul className="product__hover">
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/heart.png" alt="" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/compare.png" alt="" />{" "}
                         <span>Compare</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/search.png" alt="" />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="product__item__text">
                   <h6>Piqué Biker Jacket</h6>
-                  <a href="#" className="add-cart">
+                  <Link to="#" className="add-cart">
                     + Add To Cart
-                  </a>
+                  </Link>
                   <div className="rating">
                     <i className="fa fa-star-o" />
                     <i className="fa fa-star-o" />
@@ -125,28 +126,28 @@ const ShoppingDetailRelated = () => {
                   <span className="label">Sale</span>
                   <ul className="product__hover">
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/heart.png" alt="" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/compare.png" alt="" />{" "}
                         <span>Compare</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/search.png" alt="" />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="product__item__text">
                   <h6>Multi-pocket Chest Bag</h6>
-                  <a href="#" className="add-cart">
+                  <Link to="#" className="add-cart">
                     + Add To Cart
-                  </a>
+                  </Link>
                   <div className="rating">
                     <i className="fa fa-star" />
                     <i className="fa fa-star" />
@@ -177,28 +178,28 @@ const ShoppingDetailRelated = () => {
                 >
                   <ul className="product__hover">
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/heart.png" alt="" />
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/compare.png" alt="" />{" "}
                         <span>Compare</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link to="#">
                         <img src="img/icon/search.png" alt="" />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="product__item__text">
                   <h6>Diagonal Textured Cap</h6>
-                  <a href="#" className="add-cart">
+                  <Link to="#" className="add-cart">
                     + Add To Cart
-                  </a>
+                  </Link>
                   <div className="rating">
                     <i className="fa fa-star-o" />
                     <i className="fa fa-star-o" />
