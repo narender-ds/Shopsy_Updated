@@ -16,7 +16,6 @@ const ProductDetailSlice=createSlice({
     extraReducers:(data)=>{
         data
         .addCase(fetchProductDetail.pending,(state,action)=>{
-            console.log('productDetailPending', state)
         })
         .addCase(fetchProductDetail.fulfilled,(state,action)=>{
             state.productDetail=action.payload
