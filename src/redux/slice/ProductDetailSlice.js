@@ -20,7 +20,6 @@ const ProductDetailSlice=createSlice({
         })
         .addCase(fetchProductDetail.fulfilled,(state,action)=>{
             state.productDetail=action.payload
-            console.log('state.productDetail', state.productDetail)
         })
         .addCase(fetchProductDetail.rejected,(state,action)=>{
             console.log('productDetailRejected', state)

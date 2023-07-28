@@ -8,7 +8,6 @@ const ShopDetails = () => {
   let location = useLocation();
   const detail = location.state.data;
   const productDetail=useSelector((state)=>state?.productDetail?.productDetail)
-  console.log('productDetail', productDetail)
   const [img, setImg] = React.useState(detail.thumbnail);
   const dispatch = useDispatch();
 
