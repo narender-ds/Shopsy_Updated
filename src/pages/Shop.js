@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { productsFetch } from "../redux/slice/productSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,14 +10,17 @@ import { getCategoryData } from "../redux/slice/GetCategoryData";
 const Shop = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.categories);
+  const [showMore, setShowMore] = useState(5);
   const GetCategoryItems = useSelector(
     (state) => state?.getCategoryData?.getCategoryData
   );
   useEffect(() => {
-    dispatch(productsFetch());
+    dispatch(productsFetch(10));
     dispatch(category());
-  });
-
+  }, [dispatch]);
+  const showMoreCategory = () => {
+    setShowMore((prev) => prev + 5);
+  };
   return (
     <>
       <section className="breadcrumb-option">
@@ -39,7 +42,7 @@ const Shop = () => {
           <div className="col-md-3">
             <div className="card mb-4">
               <div className="card-header">Categories</div>
-              {categories?.map((categoryData) => {
+              {categories?.slice(0, showMore).map((categoryData) => {
                 return (
                   <>
                     <div
@@ -57,6 +60,7 @@ const Shop = () => {
                   </>
                 );
               })}
+              <button onClick={showMoreCategory}>show More</button>
             </div>
             <div className="card">
               <div className="card-header">Filter</div>
@@ -532,79 +536,86 @@ const Shop = () => {
               </div>
               <div className="card-body">
                 <div className="row">
-                  { GetCategoryItems && GetCategoryItems?.products?.map((item) => {
-                    return (
-                      <>
-                        <div className="col-md-4 mb-4" key={item.id}>
-                          <div className="card">
-                            <Link to="/shop-details" state={{ data: item }}>
-                              <img
-                                className="card-img-top"
-                                style={{ height: "159px", width: "" }}
-                                src={item.thumbnail}
-                                alt=""
-                              />
-                            </Link>
-                            <div className="card-body">
-                              <p className="h6">
-                                <small className="text-muted">
-                                  {item.brand}
-                                </small>
-                                <br />
-                                {item.title}
-                              </p>
-                              {item.rating <= 4.5 ? (
-                                <p className="m-0">
-                                  <i className="fa-xs fa fa-star" />
-                                  <i className="fa-xs fa fa-star" />
-                                  <i className="fa-xs fa fa-star" />
-                                  <i className="fa-xs fa fa-star" />
-                                  <i className="fa fa-star-o" />
+                  {GetCategoryItems &&
+                    GetCategoryItems?.products?.map((item) => {
+                      return (
+                        <>
+                          <div className="col-md-4 mb-4" key={item.id}>
+                            <div className="card">
+                              <Link to="/shop-details" state={{ data: item }}>
+                                <img
+                                  className="card-img-top"
+                                  style={{ height: "159px", width: "" }}
+                                  src={item.thumbnail}
+                                  alt=""
+                                />
+                              </Link>
+                              <div className="card-body">
+                                <p className="h6">
+                                  <small className="text-muted">
+                                    {item.brand}
+                                  </small>
+                                  <br />
+                                  {item.title}
                                 </p>
-                              ) : (
-                                <p className="m-0">
-                                  <i className="fa-xs fa fa-star" />
-                                  <i className="fa-xs fa fa-star" />
-                                  <i className="fa-xs fa fa-star" />
-                                  <i className="fa-xs fa fa-star" />
-                                  <i className="fa-xs fa fa-star" />
-                                </p>
-                              )}
-                              <p className="h5 m-0">${item.price}</p>
-                            </div>
-                            <div className="card-footer p-0">
-                              <div className="btn-group" role="group">
-                                <button
-                                  type="button"
-                                  className="btn btn-light"
-                                  onClick={() => {
-                                    dispatch(addToCart(item));
-                                  }}
-                                >
-                                  <span>Add Cart</span>
-                                </button>
-                                <button type="button" className="btn btn-light">
-                                  <i className="fa fa-shopping-cart" />
-                                </button>
-                                <button
-                                  type="button"
-                                  className="btn btn-light"
-                                  onClick={() => {
-                                    dispatch(addToWishList(item));
-                                  }}
-                                >
-                                  <i className="fa fa-heart" />
-                                </button>
-                                <button type="button" className="btn btn-light">
-                                  <i className="fa fa-exchange" />
-                                </button>
+                                {item.rating <= 4.5 ? (
+                                  <p className="m-0">
+                                    <i className="fa-xs fa fa-star" />
+                                    <i className="fa-xs fa fa-star" />
+                                    <i className="fa-xs fa fa-star" />
+                                    <i className="fa-xs fa fa-star" />
+                                    <i className="fa fa-star-o" />
+                                  </p>
+                                ) : (
+                                  <p className="m-0">
+                                    <i className="fa-xs fa fa-star" />
+                                    <i className="fa-xs fa fa-star" />
+                                    <i className="fa-xs fa fa-star" />
+                                    <i className="fa-xs fa fa-star" />
+                                    <i className="fa-xs fa fa-star" />
+                                  </p>
+                                )}
+                                <p className="h5 m-0">${item.price}</p>
+                              </div>
+                              <div className="card-footer p-0">
+                                <div className="btn-group" role="group">
+                                  <button
+                                    type="button"
+                                    className="btn btn-light"
+                                    onClick={() => {
+                                      dispatch(addToCart(item));
+                                    }}
+                                  >
+                                    <span>Add Cart</span>
+                                  </button>
+                                  <button
+                                    type="button"
+                                    className="btn btn-light"
+                                  >
+                                    <i className="fa fa-shopping-cart" />
+                                  </button>
+                                  <button
+                                    type="button"
+                                    className="btn btn-light"
+                                    onClick={() => {
+                                      dispatch(addToWishList(item));
+                                    }}
+                                  >
+                                    <i className="fa fa-heart" />
+                                  </button>
+                                  <button
+                                    type="button"
+                                    className="btn btn-light"
+                                  >
+                                    <i className="fa fa-exchange" />
+                                  </button>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </>
-                    );
-                  })}
+                        </>
+                      );
+                    })}
                 </div>
               </div>
               <div className="card-footer p-3">

@@ -18,7 +18,7 @@ import {
   CartProductQuantity,
   CartTotal,
   Mask,
-  EmptyCart,
+  
 } from "./CartFunctions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

@@ -7,12 +7,7 @@ const AppProvider = ({ children }) => {
 
   return (
     <>
-      <ContextApi.Provider
-        value={{
-          isLogin,
-          setIsLogin,
-        }}
-      >
+      <ContextApi.Provider value={{ isLogin, setIsLogin }}>
         {children}
       </ContextApi.Provider>
     </>

@@ -10,8 +10,8 @@ const initialState = {
 
 //fetching product using build in thunk on toolkit
 
-export const productsFetch = createAsyncThunk("products/productsFetch", async () => {
-  const response = await axios.get(`${base_url}/products`).then((res) => res.data);
+export const productsFetch = createAsyncThunk("products/productsFetch", async (limit) => {
+  const response = await axios.get(`${base_url}/products?limit=${limit}`).then((res) => res.data);
   return response;
 }); 
 

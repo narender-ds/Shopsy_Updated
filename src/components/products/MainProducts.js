@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Detail from "../../utils/skeleton/Detail";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/slice/CartSlice";
@@ -14,8 +14,9 @@ const MainProducts = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isLogin } = GlobalContext();
+  const [visibleProducts, setVisibleProducts] = useState();
   useEffect(() => {
-    dispatch(productsFetch());
+    dispatch(productsFetch(8));
   }, [dispatch]);
   const { products, status } = useSelector((state) => state.products);
   if (status === STATUS.LOADING) {
@@ -24,7 +25,10 @@ const MainProducts = () => {
   if (status !== STATUS.LOADING && status === STATUS.ERROR) {
     return <h2>{status}</h2>;
   }
-
+  const showMoreItems = () => {
+    setVisibleProducts((prevValue) => prevValue + 8);
+    dispatch(productsFetch(visibleProducts));
+  };
   return (
     <>
       <div className="card-body">
@@ -34,7 +38,11 @@ const MainProducts = () => {
               <>
                 <div className="col-md-3 mb-3" key={item.id + index}>
                   <div className="card">
-                    <Link to="/shop-details" state={{ data: item }} onClick={()=>dispatch(fetchProductDetail(item.id))} >
+                    <Link
+                      to="/shop-details"
+                      state={{ data: item }}
+                      onClick={() => dispatch(fetchProductDetail(item.id))}
+                    >
                       <img
                         className="card-img-top"
                         style={{ height: "160px", width: "" }}
@@ -115,6 +123,12 @@ const MainProducts = () => {
           })}
         </div>
       </div>
+      <button
+        className="loadMoreButton"
+        onClick={showMoreItems}
+      >
+        Load More
+      </button>
     </>
   );
 };

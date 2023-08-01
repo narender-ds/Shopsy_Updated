@@ -36,9 +36,3 @@
     transform: rotate(360deg);
   }
 }
-.cateogry {
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
-  color: aquamarine;
-}

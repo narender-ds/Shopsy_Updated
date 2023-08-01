@@ -28,8 +28,7 @@ const Category = () => {
                           type="button"
                           className="btn btn-outline-secondary mx-auto p-3 mb-2"
                           data-mdb-ripple-color="dark"
-                        onClick={() => dispatch(getCategoryData(item))}
-
+                          onClick={() => dispatch(getCategoryData(item))}
                         >
                           <i className="fas fa-couch fa-xl fa-fw" />
                         </button>

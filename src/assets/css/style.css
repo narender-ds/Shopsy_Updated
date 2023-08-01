@@ -3861,3 +3861,31 @@ ol {
 		height: 250px;
 	}
 }
+.loadMoreButton {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: 43%;
+	margin-right: 15rem;
+	align-content: space-between;
+	border-radius: 0.25rem;
+	border-width: 1px;
+	border-color: #065f46;
+	font-weight: 600;
+	color: #065f46;
+	background-color: transparent;
+  }
+  .loadMoreButton:hover {
+	border-color: transparent;
+	color: #ffffff;
+	background-color: #2183A2;
+  }
+  .cateogry {
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+	color: aquamarine;
+  }
+  
+  

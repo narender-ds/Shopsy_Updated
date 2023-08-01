@@ -137,51 +137,51 @@ export const Bubble = styled.div`
   border-radius: 2px;
   animation: ${(p) => (p.change ? styledAnimation : null)} 1s;
 `;
-const Loading = styled.div`
-  padding: 20px;
-  text-align: center;
-  color: #888;
-`;
-const ProductsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 40px 20px;
-  justify-content: center;
-  padding: 20px;
+// const Loading = styled.div`
+//   padding: 20px;
+//   text-align: center;
+//   color: #888;
+// `;
+// const ProductsContainer = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(1, 1fr);
+//   gap: 40px 20px;
+//   justify-content: center;
+//   padding: 20px;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @media (min-width: 1280px) {
-    width: 1200px;
-    margin: 0 auto;
-    grid-template-columns: repeat(4, 1fr);
-  }
-`;
-const ProductContainer = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr 50px auto;
-`;
-const ProductImage = styled.img`
-  width: 100%;
-  height: auto;
-  border: 1px solid #efefef;
-  border-radius: 2px;
-`;
-const ProductTitle = styled.h1`
-  margin: 8px 0 4px;
-  font-size: 18px;
-  font-weight: 400;
-  color: #222;
-`;
-const Price = styled.p`
-  margin: 4px 0 12px;
-  font-size: 14px;
-  color: #666;
-`;
+//   @media (min-width: 768px) {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+//   @media (min-width: 1024px) {
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+//   @media (min-width: 1280px) {
+//     width: 1200px;
+//     margin: 0 auto;
+//     grid-template-columns: repeat(4, 1fr);
+//   }
+// `;
+// const ProductContainer = styled.div`
+//   display: grid;
+//   grid-template-rows: auto 1fr 50px auto;
+// `;
+// const ProductImage = styled.img`
+//   width: 100%;
+//   height: auto;
+//   border: 1px solid #efefef;
+//   border-radius: 2px;
+// `;
+// const ProductTitle = styled.h1`
+//   margin: 8px 0 4px;
+//   font-size: 18px;
+//   font-weight: 400;
+//   color: #222;
+// `;
+// const Price = styled.p`
+//   margin: 4px 0 12px;
+//   font-size: 14px;
+//   color: #666;
+// `;
 
 const styledAnimation = keyframes`${animation}`;
 // background-color: ${primaryColor};

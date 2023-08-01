@@ -1,15 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import emptybasketSlide from "../../assets/images/cartImage.svg";
 import { EmptyCart } from "../Cart/CartFunctions";
 
 const EmptyCartSlide = () => {
-  const navigate = useNavigate();
   return (
     <>
       <div className="empty-cart-slide">
-       
-     
         <svg
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +13,6 @@ const EmptyCartSlide = () => {
           viewBox="0 0 360.000000 360.000000"
           preserveAspectRatio="xMidYMid meet"
         >
-            
           <g
             transform="translate(0.000000,360.000000) scale(0.100000,-0.100000)"
             fill="#3B3E6E"
@@ -46,7 +40,7 @@ const EmptyCartSlide = () => {
             />
           </g>
         </svg>
- <EmptyCart>Your Cart is Empty</EmptyCart>
+        <EmptyCart>Your Cart is Empty</EmptyCart>
       </div>
       <br />
     </>
